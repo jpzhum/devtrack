@@ -1,6 +1,3 @@
-import './Meuscomponentes.jsx'
-import welcomemessage from './components/welcomemessage'
-
 function MeusComponentes() {
     return (
         <section>

@@ -1,5 +1,5 @@
-import './App.css'
 import WelcomeMessage from './assets/componentes/WelcomeMessage'
+import Meuscomponentes from './assets/componentes/Meuscomponentes'
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <p>acompanhe sua evolução como desenvolvedora</p>
 
       <WelcomeMessage />
+      <Meuscomponentes />
     </main>
   )
 }
