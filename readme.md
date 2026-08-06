@@ -116,16 +116,12 @@ O template do repositório orienta essas informações. Consulte também o [guia
 
 ## Roadmap
 
-O planejamento é acompanhado pelas Issues, e pode mudar conforme o aprendizado e as decisões do projeto.
+O planejamento é acompanhado pelas Issues e pode mudar conforme o aprendizado e as decisões do projeto.
 
-- **Concluído:** [#7 — Criar estrutura inicial do frontend](https://github.com/jpzhum/devtrack/issues/7).
-- **Estrutura e documentação:** [#8 — Definir estrutura base do repositório](https://github.com/jpzhum/devtrack/issues/8) e [#12 — Definir estrutura base do repositório](https://github.com/jpzhum/devtrack/issues/12).
-- **Frontend:** [#11 — Criar estrutura inicial do frontend](https://github.com/jpzhum/devtrack/issues/11).
-- **Backend:** [#9 — Configurar base inicial do backend](https://github.com/jpzhum/devtrack/issues/9).
-- **Infraestrutura do repositório:** [#10 — Configurar infraestrutura do repositório](https://github.com/jpzhum/devtrack/issues/10).
+- Concluído: #7 — Criar estrutura inicial do frontend
+- Próxima atividade de frontend: #13 — Organizar os componentes iniciais do frontend
+- Estrutura e documentação: #8 — Definir estrutura base do repositório
+- Backend planejado: #9 — Configurar base inicial do backend
+- Infraestrutura do repositório: #10 — Configurar infraestrutura do repositório
 
-As Issues [#1 a #5](https://github.com/jpzhum/devtrack/issues) representam estados de organização do quadro e não entregas funcionais do produto.
-
-## Princípios de aprendizagem
-
-Os desafios e as tarefas de implementação devem ser executados pela desenvolvedora. Ferramentas de inteligência artificial podem apoiar pesquisa, esclarecimento e revisão, mas não devem substituir o raciocínio nem entregar automaticamente as soluções. Erros, testes de hipóteses e investigação fazem parte do processo de desenvolvimento.
+As Issues #1 a #5 representam estados de organização do quadro e não entregas funcionais do produto.
