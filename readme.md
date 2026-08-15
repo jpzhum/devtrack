@@ -1,127 +1,111 @@
 # DevTrack
 
-O DevTrack é um projeto web em construção para organizar e acompanhar projetos de desenvolvimento. O projeto também funciona como ambiente de aprendizagem prática: cada etapa é planejada, implementada e revisada de forma incremental.
+[![Frontend CI](https://github.com/jpzhum/devtrack/actions/workflows/frontend-ci.yml/badge.svg?branch=develop)](https://github.com/jpzhum/devtrack/actions/workflows/frontend-ci.yml)
 
-## Problema que o projeto pretende resolver
+O DevTrack é um projeto incremental de aprendizagem e uma futura plataforma de crescimento de desenvolvedores baseada em evidências. O repositório conecta prática técnica, Issues, autoria, revisão e validação sem apresentar o roadmap futuro como funcionalidade pronta.
 
-Informações sobre tarefas, andamento e organização de um projeto podem ficar dispersas. O DevTrack pretende reunir esse acompanhamento em uma interface web, facilitando a visualização do trabalho e de seu progresso.
+## Estado atual
 
-> O escopo funcional ainda está sendo definido nas Issues. Esta descrição representa a direção do projeto, não um sistema concluído.
+O projeto está em **R0 — Learning Sandbox**.
 
-## Status atual
+- M0 — colaboração e Git: concluído;
+- M1 — fundamentos e organização de componentes: concluído;
+- [M2 — props tipadas e fluxo pai → filho](https://github.com/jpzhum/devtrack/issues/29): próximo objetivo;
+- frontend inicial em React, TypeScript e Vite;
+- lint e build disponíveis e protegidos por CI após a integração deste workflow;
+- automated tests: not configured;
+- backend, banco de dados, autenticação, API e deploy: não implementados.
 
-O projeto está em fase inicial de desenvolvimento.
+A direção futura está documentada em [Visão de produto](docs/PRODUCT_VISION.md), [Roadmap de aprendizagem](docs/LEARNING_ROADMAP.md) e [Arquitetura-alvo](docs/ARCHITECTURE_TARGET.md). Decisões técnicas concretas serão registradas em [ADRs](docs/adr/README.md).
 
-- A estrutura inicial do frontend foi criada e integrada em `develop`.
-- O frontend ainda preserva elementos do projeto-base e componentes iniciais de aprendizagem.
-- A estrutura geral do repositório e a base do backend continuam planejadas nas Issues.
-- Não há uma versão estável ou funcionalidade final publicada.
+## Responsabilidades
 
-## Participantes e responsabilidades
+### Kel — implementação das tarefas de aprendizagem
 
-### Kel
+- investiga e implementa a própria solução;
+- cria seus commits e Pull Requests;
+- executa validações e explica os conceitos trabalhados.
 
-- desenvolvimento e implementação;
-- aprendizagem prática;
-- autoria das próprias tarefas, commits e soluções.
+### João — mentoria e governança
 
-### João
+- organiza Issues, roadmap e infraestrutura;
+- orienta o fluxo Git e revisa Pull Requests;
+- usa perguntas e pistas progressivas sem substituir a autoria da Kel.
 
-- mentoria técnica e revisão;
-- organização do projeto;
-- orientação sobre o fluxo Git;
-- suporte no planejamento.
+IA e outras ferramentas podem apoiar pesquisa, explicação e revisão. Elas não implementam a tarefa de aprendizagem no lugar da pessoa responsável.
 
-A mentoria e a revisão não transferem para João a autoria do código desenvolvido pela Kel.
-
-## Stack confirmada
-
-Com base no `frontend/package.json`, o projeto usa atualmente:
+## Stack implementada
 
 - React 19;
 - TypeScript;
 - Vite;
 - Oxlint;
-- npm para instalação de dependências e execução dos scripts.
+- npm.
 
-O backend ainda não foi iniciado; portanto, nenhuma tecnologia de backend ou banco de dados está definida aqui.
+FastAPI, PostgreSQL e outras tecnologias citadas na arquitetura são direção-alvo, não dependências atuais.
 
-## Estrutura atual
+## Estrutura
 
 ```text
 devtrack/
+├── .github/
+│   ├── ISSUE_TEMPLATE/     # modelos operacionais de Issues
+│   └── workflows/          # CI do frontend
+├── docs/
+│   ├── adr/                # decisões arquiteturais futuras
+│   ├── ARCHITECTURE_TARGET.md
+│   ├── LEARNING_ROADMAP.md
+│   └── PRODUCT_VISION.md
 ├── frontend/
-│   ├── public/              # arquivos públicos do frontend
-│   ├── src/                 # código-fonte e recursos do frontend
-│   ├── package.json         # dependências e scripts
-│   └── vite.config.ts       # configuração do Vite
-└── readme.md               # documentação geral do projeto
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── package-lock.json
+├── .gitignore
+├── CONTRIBUTING.md
+└── readme.md
 ```
 
-Diretórios como `backend/` e `docs/` ainda não existem e só devem ser adicionados quando as tarefas correspondentes forem executadas.
+Não existe pacote npm na raiz. O lockfile válido pertence exclusivamente a `frontend/`.
 
-## Configuração local
+## Executar localmente
 
-### Pré-requisitos
-
-- Node.js compatível com as dependências declaradas pelo projeto;
-- npm.
-
-### Executar o frontend
+Pré-requisito: Node.js `^20.19.0` ou `>=22.12.0`. A CI usa Node.js 24.
 
 ```bash
 git clone https://github.com/jpzhum/devtrack.git
 cd devtrack
 git switch develop
 cd frontend
-npm install
+npm ci
 npm run dev
 ```
 
-O Vite informará no terminal o endereço local da aplicação.
-
-Scripts disponíveis no frontend:
+Validações atuais:
 
 ```bash
-npm run dev      # inicia o servidor de desenvolvimento
-npm run build    # verifica o TypeScript e gera a build
-npm run lint     # executa o Oxlint
-npm run preview  # serve localmente a build gerada
+cd frontend
+npm ci
+npm audit
+npm run lint
+npm run build
 ```
 
-## Fluxo de branches
+## Fluxo de contribuição
 
 ```text
-feature/* → develop → main
+branch de tarefa → Pull Request para develop → revisão → merge
+develop → Pull Request de release → main
 ```
 
-- `feature/*`: uma branch por tarefa, criada a partir de `develop`;
-- `develop`: integra e revisa o trabalho em desenvolvimento;
-- `main`: recebe apenas versões consideradas estáveis;
-- toda integração deve passar por revisão antes do merge.
+- `feature/*`: implementação de produto ou aprendizagem;
+- `docs/*`: documentação;
+- `chore/*`: infraestrutura e governança;
+- `develop`: integração revisada;
+- `main`: releases estáveis.
 
-Branches exclusivamente documentais podem usar o prefixo `docs/`, mantendo o mesmo destino inicial: `develop`.
+Consulte [CONTRIBUTING.md](CONTRIBUTING.md) antes de iniciar uma tarefa.
 
-## Pull Requests
+## Planejamento
 
-Cada tarefa deve ser enviada em um Pull Request para `develop`. O PR deve:
-
-- ter escopo pequeno e relacionado a uma Issue;
-- explicar o que foi feito e como foi validado;
-- indicar a Issue relacionada, quando houver;
-- evitar mudanças sem relação com a tarefa;
-- aguardar revisão antes do merge.
-
-O template do repositório orienta essas informações. Consulte também o [guia de contribuição](CONTRIBUTING.md).
-
-## Roadmap
-
-O planejamento é acompanhado pelas Issues e pode mudar conforme o aprendizado e as decisões do projeto.
-
-- Concluído: #7 — Criar estrutura inicial do frontend
-- Concluído: #16 — Organizar os componentes iniciais do frontend
-- Estrutura e documentação: #8 — Definir estrutura base do repositório
-- Backend planejado: #9 — Configurar base inicial do backend
-- Infraestrutura do repositório: #10 — Configurar infraestrutura do repositório
-
-As Issues #1 a #5 representam estados de organização do quadro e não entregas funcionais do produto.
+Issues representam trabalho; o campo `Status` do GitHub Project representa `Backlog → Ready → In Progress → In Review → Done`. Apenas o próximo conceito de aprendizagem recebe escopo operacional detalhado. O restante permanece no roadmap e nos [epics de produto](https://github.com/jpzhum/devtrack/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22type%3A%20epic%22) para evitar tarefas futuras obsoletas.
