@@ -52,6 +52,8 @@ Abra o Pull Request para `develop` e preencha o template. O PR deve:
 
 Releases estáveis são promovidas por Pull Request de `develop` para `main`. Push direto e force-push não fazem parte do fluxo normal.
 
+> Administrative bypass is reserved for self-authored repository governance and infrastructure changes. Learning Pull Requests follow the normal mentor review flow and must not use the bypass.
+
 ## Aprendizagem e autoria
 
 A pessoa responsável por uma tarefa de aprendizagem investiga, implementa, commita e explica sua solução. O mentor cuida de planejamento, perguntas, pistas progressivas, revisão e governança.
