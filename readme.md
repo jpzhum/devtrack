@@ -119,7 +119,7 @@ O template do repositório orienta essas informações. Consulte também o [guia
 O planejamento é acompanhado pelas Issues e pode mudar conforme o aprendizado e as decisões do projeto.
 
 - Concluído: #7 — Criar estrutura inicial do frontend
-- Próxima atividade de frontend: #13 — Organizar os componentes iniciais do frontend
+- Concluído: #16 — Organizar os componentes iniciais do frontend
 - Estrutura e documentação: #8 — Definir estrutura base do repositório
 - Backend planejado: #9 — Configurar base inicial do backend
 - Infraestrutura do repositório: #10 — Configurar infraestrutura do repositório
