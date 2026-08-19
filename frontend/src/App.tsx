@@ -1,6 +1,6 @@
 import WelcomeMessage from './componentes/WelcomeMessage';
 import MeusComponentes from './componentes/MeusComponentes';
-import TecnologyCard from './componentes/TecnologyCard';
+import TecnologyCard from './componentes/TechnologyCard';
 
 function App() {
   return (
