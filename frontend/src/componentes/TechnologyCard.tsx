@@ -1,10 +1,10 @@
-type TecnologyCardProps = {
+type TechnologyCardProps = {
     nome: string;
     descricao: string;
     idade: number;
 };
 
-function TecnologyCard({ nome, descricao, idade }: TecnologyCardProps) {
+function TecnologyCard({ nome, descricao, idade }: TechnologyCardProps) {
     return (
         <div>
             <h2>{nome}</h2>
